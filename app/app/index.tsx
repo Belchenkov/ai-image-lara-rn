@@ -1,17 +1,32 @@
-import { Text, View } from "react-native";
+import React from "react";
+import {
+    View,
+    Text,
+    Image,
+    TouchableOpacity,
+    SafeAreaView,
+} from "react-native";
+import { router } from "expo-router";
+import { LinearGradient } from "expo-linear-gradient";
 
-import { useTheme } from "@/context/ThemeContext";
+import { useThemeColors } from "@/hooks/useThemeColors";
 
-export default function Index() {
-    const { currentTheme } = useTheme();
+type Feature = {
+    icon: string;
+    text: string;
+    description: string;
+};
 
+const features: Feature[] = [
+
+];
+
+const WelcomeScreen = () => {
     return (
-    <View
-      className={`flex-1 items-center justify-center` + (
-          currentTheme === 'dark' ? 'bg-gray-900' : 'bg-white'
-      )}
-    >
-      <Text className='text-yellow-800'>App/index.tsx to edit this screen.</Text>
-    </View>
+        <div>
+
+        </div>
     );
-}
+};
+
+export default WelcomeScreen;
