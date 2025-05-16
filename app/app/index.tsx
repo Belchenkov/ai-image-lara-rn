@@ -83,6 +83,48 @@ const WelcomeScreen = () => {
                     }
                 </View>
             </View>
+
+            <View className="p-5 w-full">
+                <TouchableOpacity
+                    className="h-[54px] rounded-xl border-[1.5px] justify-center items-center mb-4"
+                    style={{ borderColor: colors.primary }}
+                    onPress={() => router.push("/sign-in")}
+                >
+                    <Text
+                        className="text-base font-semibold"
+                        style={{ color: colors.primary }}
+                    >
+                        Log In
+                    </Text>
+                </TouchableOpacity>
+
+                <LinearGradient
+                    colors={[
+                        '#4f46e5',
+                        '#7c3aed',
+                    ]}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 1 }}
+                    style={{
+                        borderRadius: 12,
+                        marginBottom: 16,
+                        height: 54,
+                    }}
+                >
+                    <TouchableOpacity
+                        className="h-[54px] justify-center items-center"
+                        onPress={() => router.push("/signup")}
+                    >
+                        <Text className="text-base font-semibold text-white">
+                            Create Account
+                        </Text>
+                    </TouchableOpacity>
+                </LinearGradient>
+
+                <Text className={`text-center text-sm mt-2 ${currentTheme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+                    Start transforming your images today
+                </Text>
+            </View>
         </SafeAreaView>
     );
 };
