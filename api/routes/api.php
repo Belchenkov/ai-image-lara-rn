@@ -15,6 +15,10 @@ Route::middleware(['guest'])->group(function () {
         ->name('login');
 });
 
-Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
-    return $request->user();
+Route::middleware(['auth:sanctum'])
+    ->group(function () {
+        Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+        Route::get('/user', function (Request $request) {
+            return $request->user();
+        });
 });
