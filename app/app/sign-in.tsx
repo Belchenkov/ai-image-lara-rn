@@ -1,10 +1,11 @@
 import React from "react";
+import { Text, View } from "react-native";
 
 const SignIn = () => {
 	return (
-		<div>
-
-		</div>
+		<View>
+			<Text>Sign In</Text>
+		</View>
 	);
 };
 
