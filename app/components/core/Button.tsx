@@ -67,12 +67,12 @@ const Button: React.FC<ButtonProps> = ({
 				elevation: 3,
 			}}
 		>
-			<LinearGradient
-				colors={(disabled ? ['#9ca3af', '#6b7280'] : gradient) as [string, string]}
-				start={{ x: 0, y: 0 }}
-				end={{ x: 1, y: 1 }}
-				className="px-4 py-3.5"
-			>
+			{/*<LinearGradient*/}
+			{/*	colors={(disabled ? ['#9ca3af', '#6b7280'] : gradient) as [string, string]}*/}
+			{/*	start={{ x: 0, y: 0 }}*/}
+			{/*	end={{ x: 1, y: 1 }}*/}
+			{/*	className="px-4 py-3.5"*/}
+			{/*>*/}
 				<View className="flex-row items-center justify-center">
 					{ loading && (
 							<ActivityIndicator
@@ -88,7 +88,7 @@ const Button: React.FC<ButtonProps> = ({
 						<Text className={`text-center font-semibold ${textColor}`}>{ title }</Text>
 					) }
 				</View>
-			</LinearGradient>
+			{/*</LinearGradient>*/}
 		</TouchableOpacity>
 	);
 };
