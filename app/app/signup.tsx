@@ -136,9 +136,9 @@ const Signup = () => {
 				className="w-full bg-primary mb-4 py-3"
 				onPress={handleSignup}
 				disabled={loading}
+				loading={loading}
 			>
 				<View className="flex-row items-center justify-center">
-					{ loading && <ActivityIndicator size="small" color="#fff" className="mr-3" /> }
 					<Text className='text-white text-center'>Sign Up</Text>
 				</View>
 			</Button>
