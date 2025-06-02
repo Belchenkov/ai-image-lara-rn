@@ -26,7 +26,7 @@ const Main = () => {
 					{
 						text: 'Logout',
 						style: 'destructive',
-						onPress: () => signOut(),
+						onPress: () => signOut,
 					}
 				],
 				{ cancelable: true },
