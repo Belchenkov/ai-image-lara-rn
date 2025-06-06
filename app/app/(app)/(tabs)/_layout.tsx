@@ -1,46 +1,52 @@
-import React from "react";
-import { Stack, Redirect } from "expo-router";
-import { ActivityIndicator, Text, View } from "react-native";
+import { Tabs } from "expo-router";
+import { MaterialIcons } from "@expo/vector-icons";
 
-import { useSession } from "@/context/AuthContext";
 import { useThemeColors } from "@/hooks/useThemeColors";
 
-const AppLayout = () => {
-	const { session, isLoading } = useSession();
+const TabsLayout = () => {
 	const colors = useThemeColors();
 
-	if (isLoading) {
-		return (
-			<View className="flex-1 justify-center items-center bg-white dark:bg-gray-900">
-				<ActivityIndicator
-					size="large"
-					color={colors.primary}
-				/>
-				<Text className="mt-2 text-gray-800 dark:text-white">Loading...</Text>
-			</View>
-		);
-	}
-
-	if (!session) {
-		return <Redirect href='/sign-in' />
-	}
-
 	return (
-		<Stack
+		<Tabs
 			screenOptions={{
-				headerStyle: {
+				tabBarActiveTintColor: colors.primary,
+				tabBarInactiveTintColor: colors.secondaryText,
+				tabBarStyle: {
 					backgroundColor: colors.background,
+					borderTopColor: colors.border,
 				},
-				headerTintColor: colors.primary,
-				headerTitleStyle: {
-					color: colors.text,
-				},
-				contentStyle: {
-					backgroundColor: colors.background,
-				}
+				headerShown: false,
 			}}
-		/>
+		>
+			<Tabs.Screen
+				name="index"
+				options={{
+					title: 'Home',
+					tabBarIcon: ({ color, size }) => (
+						<MaterialIcons name="home" size={size} color={color} />
+					),
+				}}
+			/>
+			<Tabs.Screen
+				name="operations"
+				options={{
+					title: 'Operations',
+					tabBarIcon: ({ color, size }) => (
+						<MaterialIcons name="auto-fix-high" size={size} color={color} />
+					),
+				}}
+			/>
+			<Tabs.Screen
+				name="profile"
+				options={{
+					title: 'Profile',
+					tabBarIcon: ({ color, size }) => (
+						<MaterialIcons name="person" size={size} color={color} />
+					),
+				}}
+			/>
+		</Tabs>
 	);
 };
 
-export default AppLayout;
+export default TabsLayout;

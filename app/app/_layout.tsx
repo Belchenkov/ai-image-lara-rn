@@ -11,13 +11,13 @@ const Header = () => {
 
   // If we have a session and we're not on the welcome screen, redirect to the app
   if (session && !isLoading) {
-    return (
+      return (
         <>
           <StatusBar
             style={currentTheme === 'dark' ? 'light': 'dark'}
             backgroundColor={currentTheme === 'dark' ? '#111827' : '#ffffff'}
           />
-          <Redirect href='/(app)' />
+          <Redirect href='/(app)/(tabs)' />
         </>
     );
   }
