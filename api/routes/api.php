@@ -21,4 +21,9 @@ Route::middleware(['auth:sanctum'])
         Route::get('/user', function (Request $request) {
             return $request->user();
         });
+        Route::get('/operations/credits', function () {
+            return response()->json([
+                'operations' => \App\Enums\OperationEnum::listOfCredits()
+            ]);
+        });
 });
