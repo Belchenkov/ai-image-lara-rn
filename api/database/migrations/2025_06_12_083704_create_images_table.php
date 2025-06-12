@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('original_image', 2000);
             $table->string('generated_image_public_id');
             $table->string('generated_image', 2000);
-            c$table->string('operation_type');
-            c$table->string('operation_metadata')->nullable();
+            $table->string('operation_type');
+            $table->string('operation_metadata')->nullable();
 
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
